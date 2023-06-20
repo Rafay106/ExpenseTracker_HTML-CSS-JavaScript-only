@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header><h1 id="title">Expense Tracker</h1></header>
+      <main>
+        <section class="expense">
+          <button onclick="toggleDisplay('expense-form')">Add Expense</button>
+          <p>Expenses</p>
+          <div class="expense-list">
+            <table id="expense-table">
+              <tr>
+                <th>Amount</th>
+                <th>Category</th>
+                <th>Date</th>
+                <th>Note</th>
+              </tr>
+            </table>
+          </div>
+          <div id="expense-form">
+            <form>
+              <div class="form-input">
+                <label for="amt">Amount:</label>
+                <input type="text" id="amt" placeholder="How much?" />
+              </div>
+
+              <div class="form-input">
+                <label for="ctg">Category:</label>
+                <select id="ctg-select">
+                  <option value="food">Food</option>
+                  <option value="travel">Travel</option>
+                  <option value="groceries">Groceries</option>
+                  <option value="entertainment">Entertainment</option>
+                  <option value="others">Others</option>
+                </select>
+              </div>
+
+              <div class="form-input">
+                <label for="date">Date:</label>
+                <input type="date" id="date" />
+              </div>
+
+              <div class="form-input">
+                <label for="note">Note:</label>
+                <input
+                  type="text"
+                  id="note"
+                  placeholder="What did you spend on?"
+                />
+              </div>
+              <button onclick="createExpense(event)">Submit</button>
+            </form>
+          </div>
+        </section>
+
+        <section class="category">
+          <button onclick="toggleDisplay('category-form')">Add Category</button>
+          <p>Category</p>
+
+          <div class="categories-list">
+            <p>Food - <span id="food">0</span> Rs. spent</p>
+            <p>Travel - <span id="travel">0</span> Rs. spent</p>
+            <p>Groceries - <span id="groceries">0</span> Rs. spent</p>
+            <p>Entertainment - <span id="entertainment">0</span> Rs. spent</p>
+            <p>Others - <span id="others">0</span> Rs. spent</p>
+          </div>
+
+          <div id="category-form">
+            <form>
+              <div class="form-input">
+                <label for="ctg-name">Name:</label>
+                <input type="text" id="ctg-name" />
+              </div>
+              <button onclick="createCategory(event)">Submit</button>
+            </form>
+          </div>
+        </section>
+      </main>
+    </div>
+  </body>
+  <script src="script.js"></script>
+</html>
